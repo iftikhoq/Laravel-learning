@@ -6,9 +6,6 @@ use Tests\TestCase;
 
 class ApiRoutingTest extends TestCase
 {
-    /**
-     * Test health check endpoint.
-     */
     public function test_api_health_check_returns_200(): void
     {
         $response = $this->getJson('/api/v1/health');
@@ -20,9 +17,6 @@ class ApiRoutingTest extends TestCase
             ]);
     }
 
-    /**
-     * Test listing categories.
-     */
     public function test_can_list_categories(): void
     {
         $response = $this->getJson('/api/v1/categories');
@@ -38,9 +32,6 @@ class ApiRoutingTest extends TestCase
             ]);
     }
 
-    /**
-     * Test single category route model binding.
-     */
     public function test_category_route_model_binding(): void
     {
         $response = $this->getJson('/api/v1/categories/1');
@@ -55,9 +46,6 @@ class ApiRoutingTest extends TestCase
             ]);
     }
 
-    /**
-     * Test product list and single product route model binding.
-     */
     public function test_product_catalog_and_route_model_binding(): void
     {
         $listResponse = $this->getJson('/api/v1/products');
@@ -74,9 +62,6 @@ class ApiRoutingTest extends TestCase
             ]);
     }
 
-    /**
-     * Test missing resource returns 404.
-     */
     public function test_missing_product_returns_404(): void
     {
         $response = $this->getJson('/api/v1/products/9999');
